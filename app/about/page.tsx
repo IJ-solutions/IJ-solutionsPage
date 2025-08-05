@@ -67,7 +67,7 @@ export default function AboutPage() {
       />
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-[#0B0A57] text-white">
+        <section className="relative overflow-hidden bg-[#1D2D8F] text-white">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="relative container mx-auto px-4 py-20 lg:py-32">
             <div className="max-w-4xl mx-auto text-center">

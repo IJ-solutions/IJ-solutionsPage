@@ -1,12 +1,13 @@
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
-import { IndustryCard } from "@/components/ui/industry-card";
 
 const industries = [
-  { name: "Healthcare", icon: "🏥", description: "HIPAA-compliant solutions" },
-  { name: "Education", icon: "🎓", description: "Learning management systems" },
-  { name: "Retail", icon: "🛍️", description: "E-commerce platforms" },
-  { name: "Finance", icon: "💰", description: "Secure financial systems" },
-  { name: "NGOs", icon: "🤝", description: "Impact-driven solutions" },
+  { name: "Healthcare", image: "/images/industries/health.jpg" },
+  { name: "Education", image: "/images/industries/edu.jpg" },
+  { name: "Retail", image: "/images/industries/retail.jpg" },
+  { name: "Finance", image: "/images/industries/finance.jpg" },
+  { name: "NGOs", image: "/images/industries/ngo.jpg" },
+  { name: "Beauty", image: "/images/industries/beauty.jpg" },
 ];
 
 export function IndustriesSection() {
@@ -26,14 +27,26 @@ export function IndustriesSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {industries.map((industry, index) => (
-            <IndustryCard
+            <div
               key={index}
-              name={industry.name}
-              icon={industry.icon}
-              description={industry.description}
-            />
+              className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+            >
+              <div className="w-full h-48 relative">
+                <Image
+                  src={industry.image}
+                  alt={industry.name}
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="bg-white text-center py-3">
+                <span className="text-gray-800 text-lg font-medium">
+                  {industry.name}
+                </span>
+              </div>
+            </div>
           ))}
         </div>
       </div>

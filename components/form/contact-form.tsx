@@ -32,10 +32,7 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 2000));
-
     setIsLoading(false);
     setIsSubmitted(true);
 
@@ -47,7 +44,7 @@ export function ContactForm() {
   if (isSubmitted) {
     return (
       <Card className="border-0 shadow-xl">
-        <CardContent className="text-center py-12">
+        <CardContent className="text-center py-12 px-6 sm:px-12">
           <div className="w-16 h-16 bg-[#0B0A57]/10 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle className="h-8 w-8 text-[#0B0A57]" />
           </div>
@@ -72,18 +69,20 @@ export function ContactForm() {
 
   return (
     <Card className="border-0 shadow-xl">
-      <CardHeader className="text-center pb-8">
-        <CardTitle className="text-3xl font-bold text-[#0B0A57] font-poppins">
+      <CardHeader className="text-center pb-8 px-4 sm:px-8">
+        <CardTitle className="text-2xl sm:text-3xl font-bold text-[#0B0A57] font-poppins">
           Start Your Project Today
         </CardTitle>
-        <CardDescription className="text-lg text-gray-600">
+        <CardDescription className="text-base sm:text-lg text-gray-600">
           Fill out the form below and we&apos;ll get back to you within 24 hours
           with a customized solution for your needs.
         </CardDescription>
       </CardHeader>
-      <CardContent className="p-8 pt-0">
+
+      <CardContent className="p-4 sm:p-8 pt-0">
         <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid md:grid-cols-2 gap-6">
+          {/* First & Last Name */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             <div className="space-y-2">
               <Label htmlFor="firstName" className="text-[#0B0A57] font-medium">
                 First Name *
@@ -92,8 +91,8 @@ export function ContactForm() {
                 id="firstName"
                 name="firstName"
                 required
-                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57]"
                 placeholder="Enter your first name"
+                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57]"
               />
             </div>
             <div className="space-y-2">
@@ -104,13 +103,14 @@ export function ContactForm() {
                 id="lastName"
                 name="lastName"
                 required
-                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57]"
                 placeholder="Enter your last name"
+                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57]"
               />
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          {/* Email & Phone */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             <div className="space-y-2">
               <Label htmlFor="email" className="text-[#0B0A57] font-medium">
                 Email Address *
@@ -120,8 +120,8 @@ export function ContactForm() {
                 name="email"
                 type="email"
                 required
-                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57]"
                 placeholder="Enter your email address"
+                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57]"
               />
             </div>
             <div className="space-y-2">
@@ -132,13 +132,14 @@ export function ContactForm() {
                 id="phone"
                 name="phone"
                 type="tel"
-                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57]"
                 placeholder="Enter your phone number"
+                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57]"
               />
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          {/* Company & Service */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             <div className="space-y-2">
               <Label htmlFor="company" className="text-[#0B0A57] font-medium">
                 Company Name
@@ -146,8 +147,8 @@ export function ContactForm() {
               <Input
                 id="company"
                 name="company"
-                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57]"
                 placeholder="Enter your company name"
+                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57]"
               />
             </div>
             <div className="space-y-2">
@@ -178,6 +179,7 @@ export function ContactForm() {
             </div>
           </div>
 
+          {/* Message */}
           <div className="space-y-2">
             <Label htmlFor="message" className="text-[#0B0A57] font-medium">
               Project Description *
@@ -187,19 +189,23 @@ export function ContactForm() {
               name="message"
               required
               rows={6}
+              placeholder="Describe your project requirements, goals, and any specific features you need..."
               className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57]"
-              placeholder="Please describe your project requirements, goals, and any specific features you need..."
             />
           </div>
 
-          <div className="flex items-center space-x-2">
+          {/* Terms (Mobile-Optimized) */}
+          <div className="flex items-start gap-3">
             <Checkbox
               id="terms"
               name="terms"
               required
-              className="border-gray-300 data-[state=checked]:bg-[#0B0A57] data-[state=checked]:border-[#0B0A57]"
+              className="mt-1 border-gray-300 data-[state=checked]:bg-[#0B0A57] data-[state=checked]:border-[#0B0A57]"
             />
-            <Label htmlFor="terms" className="text-sm text-gray-600">
+            <Label
+              htmlFor="terms"
+              className="text-sm text-gray-600 leading-snug"
+            >
               I agree to the{" "}
               <Link href="/terms" className="text-[#0B0A57] hover:underline">
                 Terms of Service
@@ -212,11 +218,12 @@ export function ContactForm() {
             </Label>
           </div>
 
+          {/* Submit Button */}
           <Button
             type="submit"
             size="lg"
             disabled={isLoading}
-            className="w-full bg-[#0B0A57] hover:bg-[#0B0A57]/90 text-white py-4 text-lg font-semibold"
+            className="w-full bg-[#0B0A57] hover:bg-[#0B0A57]/90 text-white py-4 text-base sm:text-lg font-semibold"
           >
             {isLoading ? (
               <>

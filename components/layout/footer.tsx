@@ -27,9 +27,9 @@ const footerLinks = {
 
 // Company contact information
 const contactInfo = {
-  email: "hello@ijsolutions.com",
-  phone: "+1 (234) 567-8900",
-  address: "123 Innovation Drive, Tech City, TC 12345",
+  email: "info@ijsolutions.com",
+  phone: "+233 (545) 097-890",
+  address: " Abotsi Street, East Legon, Accra, Ghana",
 };
 
 export function Footer() {

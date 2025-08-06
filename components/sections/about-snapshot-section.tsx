@@ -1,5 +1,4 @@
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -20,8 +19,8 @@ export function AboutSnapshotSection() {
               Founded on the principles of innovation and excellence, I&J
               Solutions Ltd is your trusted partner in digital transformation.
               We combine deep technical expertise with strategic business
-              insight to deliver solutions that not only meet today`s needs but
-              anticipate tomorrow`s challenges.
+              insight to deliver solutions that not only meet today&apos;s needs
+              but anticipate tomorrow&apos;s challenges.
             </p>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
@@ -41,17 +40,17 @@ export function AboutSnapshotSection() {
                 <span>Proven track record across multiple industries</span>
               </div>
             </div>
-            <Button
-              asChild
-              size="lg"
-              className="bg-white text-navy-900 hover:bg-gray-100"
+
+            {/* Custom Button as Link */}
+            <Link
+              href="/about"
+              className="inline-flex items-center px-6 py-4 bg-white text-navy-900 hover:bg-navy-900 hover:text-white transition-colors text-base font-medium rounded-md"
             >
-              <Link href="/about">
-                Learn More About Us
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+              Learn More About Us
+              <ArrowRight className="ml-2 h-5 w-5 transition-colors" />
+            </Link>
           </div>
+
           <div className="relative">
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-8">

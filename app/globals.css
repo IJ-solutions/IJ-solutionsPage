@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Safelist Lucide icon classes to ensure visibility */
+@source inline("text-white text-[#0b0a57] w-8 h-8 w-10 h-10");
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

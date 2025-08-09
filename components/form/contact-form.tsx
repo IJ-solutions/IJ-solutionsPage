@@ -91,8 +91,8 @@ export function ContactForm() {
                 id="firstName"
                 name="firstName"
                 required
-                placeholder="Enter your first name"
-                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57]"
+                placeholder="John"
+                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57] placeholder:text-gray-400 placeholder:opacity-60 focus:placeholder-transparent text-sm sm:text-base"
               />
             </div>
             <div className="space-y-2">
@@ -103,8 +103,8 @@ export function ContactForm() {
                 id="lastName"
                 name="lastName"
                 required
-                placeholder="Enter your last name"
-                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57]"
+                placeholder="Doe"
+                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57] placeholder:text-gray-400 placeholder:opacity-60 focus:placeholder-transparent text-sm sm:text-base"
               />
             </div>
           </div>
@@ -120,8 +120,8 @@ export function ContactForm() {
                 name="email"
                 type="email"
                 required
-                placeholder="Enter your email address"
-                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57]"
+                placeholder="john.doe@example.com"
+                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57] placeholder:text-gray-400 placeholder:opacity-60 focus:placeholder-transparent text-sm sm:text-base"
               />
             </div>
             <div className="space-y-2">
@@ -132,8 +132,8 @@ export function ContactForm() {
                 id="phone"
                 name="phone"
                 type="tel"
-                placeholder="Enter your phone number"
-                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57]"
+                placeholder="+233 234 567 890"
+                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57] placeholder:text-gray-400 placeholder:opacity-60 focus:placeholder-transparent text-sm sm:text-base"
               />
             </div>
           </div>
@@ -147,8 +147,8 @@ export function ContactForm() {
               <Input
                 id="company"
                 name="company"
-                placeholder="Enter your company name"
-                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57]"
+                placeholder="Tech Innovations Ltd."
+                className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57] placeholder:text-gray-400 placeholder:opacity-60 focus:placeholder-transparent text-sm sm:text-base"
               />
             </div>
             <div className="space-y-2">
@@ -156,7 +156,7 @@ export function ContactForm() {
                 Service Interested In *
               </Label>
               <Select name="service" required>
-                <SelectTrigger className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57]">
+                <SelectTrigger className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57] text-sm sm:text-base placeholder:text-gray-400 placeholder:opacity-60">
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
                 <SelectContent>
@@ -189,13 +189,13 @@ export function ContactForm() {
               name="message"
               required
               rows={6}
-              placeholder="Describe your project requirements, goals, and any specific features you need..."
-              className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57]"
+              placeholder="We need a cloud-based inventory management system integrated with our e-commerce store."
+              className="border-gray-300 focus:border-[#0B0A57] focus:ring-[#0B0A57] placeholder:text-gray-400 placeholder:opacity-60 focus:placeholder-transparent text-sm sm:text-base"
             />
           </div>
 
           {/* Terms (Mobile-Optimized) */}
-          <div className="flex items-start gap-3">
+          <div className="flex items-start gap-3 sm:gap-2 flex-wrap">
             <Checkbox
               id="terms"
               name="terms"
@@ -204,7 +204,7 @@ export function ContactForm() {
             />
             <Label
               htmlFor="terms"
-              className="text-sm text-gray-600 leading-snug"
+              className="text-sm sm:text-base text-gray-600 leading-snug flex-1"
             >
               I agree to the{" "}
               <Link href="/terms" className="text-[#0B0A57] hover:underline">
@@ -223,7 +223,7 @@ export function ContactForm() {
             type="submit"
             size="lg"
             disabled={isLoading}
-            className="w-full bg-[#0B0A57] hover:bg-[#0B0A57]/90 text-white py-4 text-base sm:text-lg font-semibold"
+            className="w-full bg-[#0B0A57] hover:bg-[#0B0A57]/90 text-white py-4 text-sm sm:text-lg font-semibold"
           >
             {isLoading ? (
               <>
@@ -238,7 +238,7 @@ export function ContactForm() {
             )}
           </Button>
 
-          <p className="text-sm text-gray-500 text-center">
+          <p className="text-xs sm:text-sm text-gray-500 text-center">
             We typically respond within 24 hours. For urgent inquiries, please
             call us directly.
           </p>

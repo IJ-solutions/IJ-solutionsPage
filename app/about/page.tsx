@@ -90,16 +90,17 @@ export default function AboutPage() {
         {/* Mission & Vision */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Mission & Vision Text */}
               <div className="space-y-8">
                 <div>
                   <Badge className="mb-4 bg-[#0B0A57]/10 text-[#0B0A57] hover:bg-[#0B0A57]/20 border-[#0B0A57]/20">
                     Our Mission
                   </Badge>
-                  <h2 className="text-3xl font-bold text-[#0B0A57] mb-4 font-poppins">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-[#0B0A57] mb-4 font-poppins">
                     Empowering Businesses Through Technology
                   </h2>
-                  <p className="text-lg text-gray-600 leading-relaxed">
+                  <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                     Our mission is to bridge the gap between complex technology
                     and business success. We believe that every organization,
                     regardless of size, deserves access to cutting-edge
@@ -111,10 +112,10 @@ export default function AboutPage() {
                   <Badge className="mb-4 bg-[#0B0A57]/10 text-[#0B0A57] hover:bg-[#0B0A57]/20 border-[#0B0A57]/20">
                     Our Vision
                   </Badge>
-                  <h2 className="text-3xl font-bold text-[#0B0A57] mb-4 font-poppins">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-[#0B0A57] mb-4 font-poppins">
                     A Smarter, More Connected Tomorrow
                   </h2>
-                  <p className="text-lg text-gray-600 leading-relaxed">
+                  <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                     We envision a future where intelligent technology seamlessly
                     integrates with human potential, creating unprecedented
                     opportunities for businesses to thrive in an increasingly
@@ -123,12 +124,13 @@ export default function AboutPage() {
                 </div>
               </div>
 
+              {/* Icon Cards */}
               <div className="relative">
-                <div className="bg-gradient-to-br from-[#0B0A57]/10 to-[#0B0A57]/10 rounded-2xl p-8">
-                  <div className="grid grid-cols-2 gap-6">
+                <div className="bg-gradient-to-br from-[#0B0A57]/10 to-[#0B0A57]/10 rounded-2xl p-6 sm:p-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="text-center p-6 bg-white rounded-xl shadow-lg">
-                      <div className="w-16 h-16 bg-[#0B0A57] rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <Target className="h-8 w-8 text-white" />
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#0B0A57] rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <Target className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                       </div>
                       <h3 className="font-bold text-[#0B0A57] mb-2 font-poppins">
                         Innovation First
@@ -139,8 +141,8 @@ export default function AboutPage() {
                     </div>
 
                     <div className="text-center p-6 bg-white rounded-xl shadow-lg">
-                      <div className="w-16 h-16 bg-[#0B0A57] rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <Users className="h-8 w-8 text-white" />
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#0B0A57] rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <Users className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                       </div>
                       <h3 className="font-bold text-[#0B0A57] mb-2 font-poppins">
                         Client-Centric
@@ -151,8 +153,8 @@ export default function AboutPage() {
                     </div>
 
                     <div className="text-center p-6 bg-white rounded-xl shadow-lg">
-                      <div className="w-16 h-16 bg-[#0B0A57] rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <Award className="h-8 w-8 text-white" />
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#0B0A57] rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <Award className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                       </div>
                       <h3 className="font-bold text-[#0B0A57] mb-2 font-poppins">
                         Excellence
@@ -163,8 +165,8 @@ export default function AboutPage() {
                     </div>
 
                     <div className="text-center p-6 bg-white rounded-xl shadow-lg">
-                      <div className="w-16 h-16 bg-[#0B0A57] rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <Globe className="h-8 w-8 text-white" />
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#0B0A57] rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <Globe className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                       </div>
                       <h3 className="font-bold text-[#0B0A57] mb-2 font-poppins">
                         Global Impact

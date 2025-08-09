@@ -37,14 +37,6 @@ export function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroContent.length);
-    }, 8000);
-    return () => clearInterval(interval);
-  }, [isAutoPlaying]);
-
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % heroContent.length);
     setIsAutoPlaying(false);
@@ -62,6 +54,47 @@ export function HeroSection() {
     setIsAutoPlaying(false);
   };
 
+  // Handle autoplay and slide switching for videos on mobile
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+
+    const currentContent = heroContent[currentSlide];
+
+    if (currentContent.type === "video") {
+      const videoEl = document.getElementById(
+        `hero-video-${currentContent.id}`
+      ) as HTMLVideoElement;
+
+      if (videoEl) {
+        videoEl.currentTime = 0;
+
+        // Force autoplay on mobile
+        videoEl.play().catch(() => {
+          console.warn("Autoplay blocked on mobile browser.");
+        });
+
+        // Move to next slide when video ends
+        const onEnded = () => nextSlide();
+        videoEl.addEventListener("ended", onEnded);
+
+        return () => {
+          videoEl.removeEventListener("ended", onEnded);
+        };
+      }
+    } else {
+      // Image slides auto-advance every 8s
+      if (isAutoPlaying) {
+        interval = setInterval(() => {
+          setCurrentSlide((prev) => (prev + 1) % heroContent.length);
+        }, 8000);
+      }
+    }
+
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [currentSlide, isAutoPlaying]);
+
   return (
     <section className="relative h-[100dvh] flex items-center justify-center overflow-hidden bg-[#0B0A57]">
       {/* Background Carousel */}
@@ -76,10 +109,11 @@ export function HeroSection() {
           >
             {content.type === "video" ? (
               <video
+                id={`hero-video-${content.id}`}
                 autoPlay
                 muted
-                loop
                 playsInline
+                loop={false} // so we detect "ended"
                 className="w-full h-full object-cover"
               >
                 <source src={content.src} type="video/mp4" />
@@ -127,7 +161,7 @@ export function HeroSection() {
           <button
             key={index}
             className={cn(
-              "w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300",
+              "w-1.5 h-1.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300",
               index === currentSlide
                 ? "bg-white scale-110 sm:scale-125"
                 : "bg-white/50 hover:bg-white/75"

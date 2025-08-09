@@ -238,7 +238,7 @@ export function ContactForm() {
             )}
           </Button>
 
-          <p className="text-xs sm:text-sm text-gray-500 text-center">
+          <p className="text-xs sm:text-sm text-gray-800 text-center">
             We typically respond within 24 hours. For urgent inquiries, please
             call us directly.
           </p>

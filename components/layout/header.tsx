@@ -4,10 +4,15 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
-// Navigation configuration
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
@@ -15,19 +20,14 @@ const navigation = [
   { name: "Contact", href: "/contact" },
 ];
 
-/**
- * Header Component
- * Main navigation header with responsive mobile menu
- * Features: Logo, navigation links, CTA button, mobile hamburger menu
- */
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
-      <div className="container mx-auto px-8 lg:px-16">
+      <div className="container mx-auto px-4 sm:px-8 lg:px-16">
         <div className="flex items-center justify-between h-16">
-          {/* Company Logo and Brand */}
+          {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
             <Image
               src="/ij-logo.svg"
@@ -36,9 +36,8 @@ export function Header() {
               height={40}
               className="bg-[#0B0A57]/5 rounded-lg p-1"
             />
-            {/* Brand text - hidden on small screens */}
             <div className="hidden sm:block">
-              <div className="text-xl font-bold text-[#0B0A57] font-poppins">
+              <div className="text-lg sm:text-xl font-bold text-[#0B0A57] font-poppins">
                 I&J Solutions Ltd
               </div>
               <div className="text-xs text-[#0B0A57]">
@@ -47,7 +46,7 @@ export function Header() {
             </div>
           </Link>
 
-          {/* Desktop Navigation - hidden on mobile */}
+          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link
@@ -60,7 +59,7 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Desktop CTA Button - hidden on mobile */}
+          {/* Desktop CTA */}
           <div className="hidden md:block">
             <Button
               asChild
@@ -70,30 +69,41 @@ export function Header() {
             </Button>
           </div>
 
-          {/* Mobile Menu - shown only on mobile */}
+          {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <div className="flex flex-col space-y-4 mt-8">
-                {/* Mobile navigation links */}
+            <SheetContent
+              side="right"
+              className="w-[260px] sm:w-[300px] px-6 py-8 flex flex-col"
+            >
+              {/* Hidden title for accessibility */}
+              <VisuallyHidden>
+                <SheetTitle>Mobile Menu</SheetTitle>
+              </VisuallyHidden>
+
+              {/* Mobile Nav Links */}
+              <nav className="flex flex-col gap-6 mt-8 sm:mt-10">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="text-lg font-medium text-gray-700 hover:text-[#0B0A57] transition-colors"
+                    className="text-base font-medium text-gray-700 hover:text-[#0B0A57] transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
                   </Link>
                 ))}
-                {/* Mobile CTA button */}
+              </nav>
+
+              {/* CTA */}
+              <div className="mt-8 border-t border-gray-200 pt-6">
                 <Button
                   asChild
-                  className="bg-[#0B0A57] hover:bg-[#0B0A57]/90 text-white w-fit mt-4"
+                  className="bg-[#0B0A57] hover:bg-[#0B0A57]/90 text-white w-full"
                 >
                   <Link href="/contact" onClick={() => setIsOpen(false)}>
                     Get Started

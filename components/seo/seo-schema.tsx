@@ -27,7 +27,7 @@ export function SEOSchema() {
       "@type": "ContactPoint",
       telephone: "+1-234-567-8900",
       contactType: "customer service",
-      email: "hello@ijsolutions.com",
+      email: "info@ijsolutions.com",
       availableLanguage: "English",
     },
     address: {

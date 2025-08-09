@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-/* eslint-disable react/jsx-no-comment-textnodes */
+
 import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -67,7 +67,7 @@ export default function AboutPage() {
       />
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-[#1D2D8F] text-white">
+        <section className="relative overflow-hidden bg-[#0B0A57] text-white">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="relative container mx-auto px-4 py-20 lg:py-32">
             <div className="max-w-4xl mx-auto text-center">
@@ -263,15 +263,12 @@ export default function AboutPage() {
                       </div>
                       <div className="md:col-span-2">
                         <p className="text-gray-600 leading-relaxed">
-                          // eslint-disable-next-line
-                          react/no-unescaped-entities,
-                          react/no-unescaped-entities Today, we continue to push
-                          the boundaries of what's possible in technology
-                          solutions. With a growing portfolio of successful
-                          projects and satisfied clients, we remain committed to
-                          our founding principles while embracing the latest
-                          technological advancements to serve our clients
-                          better.
+                          Today, we continue to push the boundaries of what's
+                          possible in technology solutions. With a growing
+                          portfolio of successful projects and satisfied
+                          clients, we remain committed to our founding
+                          principles while embracing the latest technological
+                          advancements to serve our clients better.
                         </p>
                       </div>
                     </div>
@@ -376,7 +373,7 @@ export default function AboutPage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-white text-[#0B0A57] hover:bg-gray-100 px-8 py-4 text-lg"
+                className=" text-[#0B0A57] hover:bg-gray-100  px-8 py-4 text-lg"
               >
                 <Link href="/contact">
                   Get Started Today

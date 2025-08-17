@@ -45,10 +45,10 @@ export function ContactForm() {
     return (
       <Card className="border-0 shadow-xl">
         <CardContent className="text-center py-12 px-6 sm:px-12">
-          <div className="w-16 h-16 bg-[#0B0A57]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-            <CheckCircle className="h-8 w-8 text-[#0B0A57]" />
+          <div className="w-16 h-16 bg-[#008000] rounded-full flex items-center justify-center mx-auto mb-6">
+            <CheckCircle className="h-8 w-8 text-white" />
           </div>
-          <h3 className="text-2xl font-bold text-[#0B0A57] mb-4 font-poppins">
+          <h3 className="text-2xl font-bold text-green-500 mb-4 font-poppins">
             Thank You for Your Message!
           </h3>
           <p className="text-gray-600 mb-6">
@@ -238,7 +238,7 @@ export function ContactForm() {
             )}
           </Button>
 
-          <p className="text-xs sm:text-sm text-gray-800 text-center">
+          <p className="text-xs sm:text-sm text-gray-900 text-center">
             We typically respond within 24 hours. For urgent inquiries, please
             call us directly.
           </p>

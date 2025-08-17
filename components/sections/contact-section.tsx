@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Badge } from "@/components/ui/badge";
 import { ContactForm } from "@/components/form/contact-form";
 
@@ -13,7 +14,7 @@ export function ContactSection() {
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Let`s discuss how our innovative solutions can help you achieve your
+            Let's discuss how our innovative solutions can help you achieve your
             goals. Contact us today for a free consultation.
           </p>
         </div>
